@@ -1,15 +1,22 @@
 // Мое решение:
 function pow(x,n) {
-    return x**n;
+    let mult = x;
+    for (let i = 0; i < n; i++ ) {
+        mult *= x;
     }
+
+    return mult;
+    // return x**n;
+}
     
-    let x = +prompt (`Введите число х`, '1');
-    let n = +prompt (`Введите число n`, '1');
-    let result = pow(x,n);
+const x = Number(prompt (`Введите число х`, '1'));
+const n = Number(prompt (`Введите число n`, '1'));
+const result = pow(x,n);
     
-    if (n >= 1) {
-      alert (result);
-    } else {
-      alert (`n должно быть целым и больше 1`);
-    }
+if (n >= 1) {
+    alert (result);
+} else {
+    alert (`n должно быть целым и больше 1`);
+}
     
+  
