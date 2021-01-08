@@ -1,12 +1,11 @@
 // Мое решение:
 function pow(x,n) {
     let mult = x;
-    for (let i = 0; i < n; i++ ) {
+    for (let i = 1; i < n; i++ ) {
         mult *= x;
     }
 
     return mult;
-    // return x**n;
 }
     
 const x = Number(prompt (`Введите число х`, '1'));
