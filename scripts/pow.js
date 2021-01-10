@@ -1,14 +1,14 @@
-function pow(x,n) {
-  let mult = x;
+function runPow() {
+  function pow(x,n) {
+    let mult = x;
 
-  for (let i = 1; i < n; i++ ) {
-    mult *= x;
+    for (let i = 1; i < n; i++ ) {
+      mult *= x;
+    }
+
+    return mult;
   }
 
-  return mult;
-}
-    
-function runPow() {
   const x = Number(prompt (`Введите число х`, '1'));
   const n = Number(prompt (`Введите число n`, '1'));
   const result = pow(x,n);
