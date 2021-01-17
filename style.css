@@ -44,26 +44,3 @@ button:active {
 .item button {
   margin-left: 10px;
 }
-
-.sum {
-  display: flex;
-  align-items: center;
-}
-
-.number {
-  display: flex;
-  align-items: center;
-}
-
-.number button {
-  margin-left: 20px;
-}
-
-.choose {
-  display: flex;
-  align-items: center;
-}
-
-.choose button {
-  margin-left: 20px;
-}
