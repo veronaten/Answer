@@ -1,14 +1,17 @@
 function sumMultiply(array) {
-  if (!Array.isArray(array) || array.lenth !==4) {
+  if (!Array.isArray(array) || array.length !== 4) {
     return 'Array is expected to have 4 numbers';
   }
 
   return array[0] * array[1] + array[2] * array [3];
 }
-function runSumMultiply() {
-  const userArray = prompt('Enter array:', '[2, 5, 3, 9]') || [];
 
-  const result = sumMultiply(userArray);
+function runSumMultiply() {
+  const userNumbers = prompt('Enter 4 numbers divided by space:', '2 5 3 9') || '0';
+
+  const array = userNumbers.split(' ');
+
+  const result = sumMultiply(array);
 
   alert(result);
 } 
@@ -32,11 +35,11 @@ function runDayNumber() {
 const weekDay = { 1: 'Md', 2: 'Ts', 3: 'W', 4: 'Th', 5: 'Fr', 6: 'St', 7: 'Sd'};
     
 function chooseLang() {
-    const userLang = prompt('Выберите язык: "ru" или "eng"', ru);
+    const userLang = prompt('Выберите язык: "ru" или "eng"', 'ru');
 
-    if (userLang === ru) {
+    if (userLang === 'ru') {
         runDayNumber();
-    } else if (userLang === eng) {
+    } else if (userLang === 'eng') {
         runDayChoose();
     } else {
         alert('Выберите язык и введите "ru" или "eng"');
