@@ -32,30 +32,35 @@ function runDayNumber() {
   alert(`Here's your day: ${dayName}`);
 }
 
-const weekDay = {1: 'Mn', 2: 'Ts', 3: 'Wd', 4: 'Th', 5: 'Fr', 6: 'St', 7: 'Sd' } 
+const  weekDaysByLanguage = {
+  'eng': ['Mn', 'Ts', 'Ws', 'Th', 'Fr', 'St', 'Sd'],
+  'ru': ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вскр']
+};
 
-function dayChoose() {
-  const userDayNumber = Number(prompt('Enter the number of the day of the week', 3) || 0);
-
-  if (Number.isNaN(userDayNumber)) {
-    alert('Enter valid number please')
-
-    return
-  }
-
-  const dayNumber = week[userDayNumber];
-
-  const dayName = weekDay[userDayNumber];
-
+function revealTheDay() {
   const userLang = prompt('Select a language: "ru" or "eng"', 'ru');
 
+  let dayNumberQuestionString = 'Enter the number the day of the week';
+
   if(userLang === 'ru') {
-    alert(`Here's your day: ${dayNumber}`);
-  } else if (userLang === 'eng') {
-    alert(`Here's your day: ${dayName}`);
-  } else {
-    alert('Select a language and enter "ru" or "eng"');
+    dayNumberQuestionString = 'Введите номер дня недели';
   }
+
+  const userDayNumber = Number(prompt(dayNumberQuestionString, 3) || 0);
+
+  const isDayNumberValid = !Number.isNaN(userDayNumber) && userDayNumber > 0 && userDayNumber <= 7;
+
+  if(!isDayNumberValid) {
+    alert(userLang === 'ru' ? 'Введено неверное занчение' : 'Enter valid number please');
+
+    return;
+  }
+  
+  const userDayName = weekDaysByLanguage[userLang][userDayNumber - 1];
+
+  const alertMessage = userLang === 'ru' ? 'Вот ваш день' : 'Here is your day';
+
+  alert(`${alertMessage}: ${userDayName}`);
 }
 
 
