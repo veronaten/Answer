@@ -16,7 +16,7 @@ function runSumMultiply() {
   alert(result);
 } 
 
-const week = { 1: 'Пн', 2: 'Вт', 3: 'Ср', 4: 'Чт', 5: 'Пт', 6: 'Сб', 7: 'Вскр' }
+const rusWeekDayNames = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вскр']
 
 function runDayNumber() {
   const userDayNumber = Number(prompt('Enter the number of the day of the week', 3) || 0);
@@ -27,14 +27,14 @@ function runDayNumber() {
     return
   }
 
-  const dayName = week[userDayNumber];
+  const dayName = rusWeekDayNames[userDayNumber - 1];
 
   alert(`Here's your day: ${dayName}`);
 }
 
 const  weekDaysByLanguage = {
   'eng': ['Mn', 'Ts', 'Ws', 'Th', 'Fr', 'St', 'Sd'],
-  'ru': ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вскр']
+  'ru': rusWeekDayNames,
 };
 
 function revealTheDay() {
@@ -42,7 +42,7 @@ function revealTheDay() {
 
   let dayNumberQuestionString = 'Enter the number the day of the week';
 
-  if(userLang === 'ru') {
+  if (userLang === 'ru') {
     dayNumberQuestionString = 'Введите номер дня недели';
   }
 
@@ -50,7 +50,7 @@ function revealTheDay() {
 
   const isDayNumberValid = !Number.isNaN(userDayNumber) && userDayNumber > 0 && userDayNumber <= 7;
 
-  if(!isDayNumberValid) {
+  if (!isDayNumberValid) {
     alert(userLang === 'ru' ? 'Введено неверное занчение' : 'Enter valid number please');
 
     return;
