@@ -44,3 +44,21 @@ function getMonth() {
     alert(`It is ${seasons[3]}`);
   }
 }
+
+function checkNumber() {
+  const userNumber = prompt('Enter 5 digits', 12345) || '0';
+
+  if (userNumber.length !== 5) {
+    alert('Enter 5 digits please');
+
+    return;
+  }
+
+  const firstSymbol = userNumber[0];
+
+  if (firstSymbol == 1 || firstSymbol == 2 || firstSymbol == 3) {
+    alert('Yes');
+  } else {
+    alert('No');
+  }
+}
