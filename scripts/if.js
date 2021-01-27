@@ -34,19 +34,32 @@ function getMonth() {
     return;
   }
 
-  if (userMonth == 1 && userMonth < 4) {
-    alert(`It is ${seasons[0]}`); 
-  } else if (userMonth >= 4 && userMonth < 7) {
-    alert(`It is ${seasons[1]}`);
-  } else if (userMonth >=7 && userMonth < 10) {
-    alert(`It is ${seasons[2]}`);
-  } else if (userMonth >= 10 && userMonth <= 12) {
-    alert(`It is ${seasons[3]}`);
-  }
+  switch (userMonth) {
+    case 1:
+    case 2:
+    case 3:
+      alert(`It is ${seasons[0]}`);
+    break;
+    case 4:
+    case 5:
+    case 6:
+      alert(`It is ${seasons[1]}`);
+    break;
+    case 7:
+    case 8:
+    case 9:
+      alert(`It is ${seasons[2]}`);
+    break;
+    case 10:
+    case 11:
+    case 12:
+      alert(`It is ${seasons[3]}`);
+    break;
+  } 
 }
 
 function checkNumber() {
-  const userNumber = prompt('Enter 5 digits', 12345) || '0';
+  const userNumber = prompt('Enter 5 digits', 12345);
 
   if (userNumber.length !== 5) {
     alert('Enter 5 digits please');
