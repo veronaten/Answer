@@ -34,28 +34,32 @@ function getMonth() {
     return;
   }
 
+  let result;
+
   switch (userMonth) {
     case 1:
     case 2:
     case 3:
-      alert(`It is ${seasons[0]}`);
+      result = seasons[0];
     break;
     case 4:
     case 5:
     case 6:
-      alert(`It is ${seasons[1]}`);
+      result = seasons[1];
     break;
     case 7:
     case 8:
     case 9:
-      alert(`It is ${seasons[2]}`);
+      result = seasons[2];
     break;
     case 10:
     case 11:
     case 12:
-      alert(`It is ${seasons[3]}`);
+      result = seasons[3];
     break;
   } 
+
+  alert(`It is ${result}!`);
 }
 
 function checkNumber() {
