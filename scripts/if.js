@@ -63,7 +63,7 @@ function getMonth() {
 }
 
 function checkNumber() {
-  const userNumber = prompt('Enter 5 digits', 12345);
+  const userNumber = prompt('Enter 5 digits', 12345) || '0';
 
   if (userNumber.length !== 5) {
     alert('Enter 5 digits please');
