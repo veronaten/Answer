@@ -18,25 +18,25 @@ function chooseWeekDays() {
   }
 }
 
-let n = 1000;
-
 function countNumber() {
-  const iteration = Number(prompt('How many times do you need to divide 1000 by 2 until the result becomes < 50 ? Enter the number', '1') || 0);
+  let n = 1000;
 
-  if (Number.isNaN(iteration)) {
+  const iterationCount = Number(prompt('How many iterations do you need to divide 1000 by 2 until the result becomes < 50? Enter the number:', '1') || 0);
+
+  if (Number.isNaN(iterationCount)) {
     alert('Enter number, please.');
 
     return;
   }
 
-  for (num = 1; num <= iteration; num++) {
+  for (num = 1; num <= iterationCount; num++) {
     n = n / 2;
     if (n > 50) {
-      alert(`${n} , not correct, try increasing the number !!!`);
+      alert(`${n} is not correct, try to increase the number!!!`);
     } else if ( n > 30 && n < 50) {
-      alert(`${n} , yes, tha's 5 times!!!`);
+      alert(`${n}: yes, that's 5 times!!!`);
     } else if (n < 30) {
-      alert(`${n}  , not correct, try reducing the number`);
+      alert(`${n} is not correct, try to reduce the number`);
       break;
     }  
   }
