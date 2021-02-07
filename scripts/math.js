@@ -19,3 +19,23 @@ function findMean() {
 
   alert(`The arithmetic mean of your array is ${result}.`);
 }
+
+function findFactorial() {
+  let inputNumber = Number(prompt('Enter a number', '5') || 0);
+
+  if (Number.isNaN(inputNumber)) {
+    alert('Enter a number, please.');
+
+    return;
+  }
+
+  let result = 1;
+
+  for (let i = 1; i < inputNumber; i++) {
+    result = result * i;
+  }
+  
+  let factorial = result * inputNumber;
+
+  alert(`The factorial ${inputNumber}! is ${factorial}`);
+}
