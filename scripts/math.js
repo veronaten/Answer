@@ -10,7 +10,7 @@ function findMean() {
   let result = 0;
 
   for (let i = 0; i < array.length; i++) {
-    result = result + array[i] / 2;
+    result = result + array[i] / array.length;
   }
 
   alert(`The arithmetic mean of your array is ${result}.`);
