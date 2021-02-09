@@ -10,10 +10,10 @@ function findMean() {
   let result = 0;
 
   for (let i = 0; i < array.length; i++) {
-    result = result + array[i] / array.length;
+    result = result + Number(array[i]); 
   }
 
-  alert(`The arithmetic mean of your array is ${result}.`);
+  alert(`The arithmetic mean of your array is ${result / array.length}.`);
 }
 
 function findFactorial() {
