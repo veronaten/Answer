@@ -6,20 +6,17 @@ function runFunction() {
     title: "My menu"
   };
     
-  function multiplyNumeric(obj) {
-    for (let key in obj) {
-      if (typeof obj[key] == 'number') {
-        alert(obj[key] * 2);
-      } else {
-        alert(obj[key]);
-      }
+  for (let key in menu) {
+    if (typeof menu[key] == 'number') {
+      alert(menu[key] * 2);
+    } else {
+      alert(menu[key]);
     }
   }
-
-  const result = multiplyNumeric(menu);
-
-  return;
 }
+
+
+
 
 
 
